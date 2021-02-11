@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        'use strict';
+
+
+        let user = {
+            name: name,
+            age: 30
+        };
+
+        let animal = {
+            eats: true
+        };
+        let rabbit = {
+            jumps: true
+        };
+        rabbit.__proto__ = animal;
+
+
+        function IsValidObj(x) {
+            return (typeof (x) === "object");
+        }
+        IsValidObj(Functions);
+        IsValidObj(IsFunction);
+        IsValidObj(Keys);
+        IsValidObj(IsObject);
+        IsValidObj(AllKeys);
+        IsValidObj(Pairs);
+
+        function Functions(x) {
+            for (let prop in x) {
+                if (IsFunction(prop.x)) {
+                    return true;
+                }
+                else return false;
+            }
+        }
+
+
+        function IsFunction(x) {
+            
+                return(typeof (x) == ' function') ;
+        }
+        IsFunction(rabbit);
+
+        function Keys(x) {
+
+            return Object.keys(x);
+        }
+        Keys(rabbit);
+
+        function IsObject(x) {
+
+            if (typeof x == 'object') {
+                return true;
+            }
+            else
+                return false;
+
+        }
+        IsObject(rabbit);
+
+
+        function AllKeys(x) {
+            for (let prop in x) {
+                alert(prop);
+            }
+        }
+        AllKeys(rabbit);
+
+
+        function Pairs(obj) {
+            for (const [key, value] of Object.entries(obj)) {
+            }
+            console.log(Object.entries(obj));
+        }
+        Pairs(user);
+
+
+
+
+
+    </script>
+</body>
+
+</html>
