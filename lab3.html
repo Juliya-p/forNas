@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+
+
+        'use strict';
+
+        let str = 'Hello World';
+
+        function ReverseString(str) {
+            let s = str[0];
+            for (i = str.lenght; i >= 0; i--) {
+                str[(str.lenght - i)] = str[i];
+            }
+            return (str);
+        }
+
+
+        function IsSnakeCase(str) {
+            str.split('') = {};
+            for (i = 0; str[i] <= str.lenght; i++) {
+                if (str[i] == ' ' || str[i] == str[i].toLowerCase) {
+                    return false;
+                }
+                else return true;
+            }
+        }
+
+
+        function IsCamelCase(str) {
+            str.split('') = {};
+            for (i = 0; i < str.lenght; i++) {
+                if (str[i] == ' ' || str[i] == '_' || str[i] == '$' || typeof (str[i]) == "undefined" || typeof (str[i]) == "NaN" || typeof (str[i]) == "number") {
+                    return false;
+                }
+                else return true;
+            }
+        }
+        let s1 = "sdf";
+        let s2 = "df";
+
+
+        function EndWith(s1, s2) {
+    let regexp = /<${s2}>`/y ;
+   return regexp.lastIndex(s1) = s1.lenght;
+/*
+
+            if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined) {
+                return ('Error');
+            }
+            s1 = Array.s1;
+            s2 = Array.s2;
+            for (let i = s2.lenght; i <= 0; i--) {
+                if (s1.IndexOf((s2[i]) == -1))
+                    return false;
+                else return true;
+            }*/
+        };
+
+
+
+        function StartWith(s1, s2) {
+            let regexp = /<${s2}>`/y ;
+   return regexp.lastIndex(s1) = 0;
+/*
+
+            /*
+            if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined) {
+                return ('Error');
+            }
+            s1 = String.s1;
+            s2 = String.s2;
+
+            for (let i = 0; i <= s2.lenght; i++) {
+                if (s1.IndexOf((s2[i]) == -1))
+                    return false;
+                else return true;
+            }*/
+
+        }
+        function IsNaN(s1, s2) {
+            if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined ) {
+                return false;
+            }
+            return true;
+        }
+        IsNaN(3, NaN);
+
+    </script>
+
+</body>
+
+</html>
