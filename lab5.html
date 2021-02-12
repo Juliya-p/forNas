@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+
+        'use strict';
+
+        let time = 1900;
+
+        class timer {
+            isValid(x) {
+                return (typeof (x) === "int");
+            }
+
+
+            start(t) {
+                isValid(t);
+                t = new t1();
+                Timer(t1);
+            }
+
+            Timer(t) {
+                this.t = t; 
+                console.log('Time started' + this.t);
+                let s = setTimeout(stop(t), time);
+            }
+
+            stop(t) {
+                isValid(t);
+                console.log('Time ends');
+                clearTimeout(s);
+            }
+        }
+class NewTimer extends timer{
+
+}
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
