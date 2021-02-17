@@ -24,58 +24,61 @@
 
 
         function compact(arr) {
-   let a = arr.filter(inArray(false, NaN, 0));
-   if( a == NaN || a == false || a == 0){
-    let ar = new Array();
             for (let i = 0; i < arr.lenght; i++) {
-
-                if (arr[i] !== false || arr[i] !== NaN || arr[i] !== 0) {
-                    ar.push(arr[i]);
-                }
-                return ar;
+                Filter(arr)
             }
-         }        
+            function Filter(arr, callback) {
+                let p = true;
+                if (arr[i] == NaN || arr[i] == 0 || arr[i] == false) {
+                    p = false;
+                }
+                callback(p);
+            }
+        
+        
         }
         compact([1, 2, 0, false]);
 
 
 
         function range(b, a, c) {//a-start, b-stop, c- step
-            if(a > 0){
-            if (a == NaN || a == undefined || a == null) {
-                a = 0;
+            if (a > 0) {
+                if (a == NaN || a == undefined || a == null) {
+                    a = 0;
+                }
+                if (c == NaN || c == undefined || c == null || c <= 0) {
+                    c = 1;
+                }
+                if (b == NaN || b == undefined || b == null || b == 0 || b < 0) {
+                    return [];
+                    b = 1;
+                }
+                let arr = new Array();
+
+                for (let i = a; i < b; i = i + c) {
+                    arr.push(i);
+                }
+                return arr;
             }
-            if (c == NaN || c == undefined || c == null || c <= 0) {
-                c = 1;
+            if (a < 0) {
+                if (a == NaN || a == undefined || a == null) {
+                    a = 0;
+                }
+                if (c == NaN || c == undefined || c == null || c >= 0) {
+                    c = -1;
+                }
+                if (b == NaN || b == undefined || b == null || b == 0 || b > a) {
+                    return [];
+                    b = 1;
+                }
+                let arr = new Array();
+
+                for (let i = a; i < b; i = i + c) {
+                    arr.push(i);
+                }
+                return arr;
             }
-            if (b == NaN || b == undefined || b == null || b == 0 || b < 0) {
-                return [];
-                b = 1;
-            }
-            let arr = new Array();
-        
-            for (let i = a; i < b; i = i + c) {          
-                arr.push(i);
-            }
-        }
-          if(a<0) {
-            if (a == NaN || a == undefined || a == null) {
-                a = 0;
-            }
-            if (c == NaN || c == undefined || c == null || c >= 0) {
-                c = -1;
-            }
-            if (b == NaN || b == undefined || b == null || b == 0 || b > a) {
-                return [];
-                b = 1;
-            }
-            let arr = new Array();
-        
-            for (let i = a; i < b; i = i + c) {         
-                arr.push(i);
-            }
-          }
-            return arr;
+           
         }
         range(10);
         range(1, 11);
@@ -88,24 +91,13 @@
 
 
 
-        function fu(a, b, c, d) {
-            console.log(arguments[0]);
-            console.log(arguments[1]);
-            console.log(arguments[2]);
-            console.log(arguments[3]);
-            let args = Array.from(arguments);
-            return args;
-        }
-
-
         function union(arr) {
-let unionObj = {};
-unionObj = fu(arr);
+            let args = Array.from(arguments);
+            if (args.hasOwnProperty('0')) {
+                return false;
+            };//?
 
 
-
-
-            let s = fu(arr);
             let news = [];
             for (let i = 0; i < s.lenght; i++) {
                 for (let k = 0; k < news.lenght; k++) {
