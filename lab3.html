@@ -19,9 +19,16 @@
 
 
         function IsSnakeCase(str) {
+            let resault1 = str.match(/' '/);
+
             str.split('') = {};
+            let regexp = str.match(/' '/);
+            if (regexp == ' ') {
+                return false;
+            };
+
             for (i = 0; str[i] <= str.lenght; i++) {
-                if (str[i] == ' ' || str[i] == str[i].toLowerCase) {
+                if (str[i] == str[i].toLowerCase) {
                     return false;
                 }
                 else return true;
@@ -30,12 +37,17 @@
 
 
         function IsCamelCase(str) {
+            let resault1 = str.match(/' '/);
+            let resault2 = str.match(/'_'/);
+
             str.split('') = {};
-            for (i = 0; i < str.lenght; i++) {
-                if (str[i] == ' ' || str[i] == '_' || str[i] == '$' || typeof (str[i]) == "undefined" || typeof (str[i]) == "NaN" || typeof (str[i]) == "number") {
-                    return false;
-                }
-                else return true;
+            let regexp = str.match(/' '/);
+            if (regexp == ' ') {
+                return false;
+            };
+            regexp = str.match(/'_'/);
+            if (str.regexp == '_') {
+                return false;
             }
         }
         let s1 = "sdf";
@@ -43,9 +55,9 @@
 
 
         function EndWith(s1, s2) {
-    let regexp = /<${s2}>`/y ;
-   return regexp.lastIndex(s1) = s1.lenght;
-/*
+            // let regexp = /<${s2}>`/y;
+            //return regexp.lastIndex(s1) = s1.lenght;
+
 
             if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined) {
                 return ('Error');
@@ -56,17 +68,13 @@
                 if (s1.IndexOf((s2[i]) == -1))
                     return false;
                 else return true;
-            }*/
-        };
+            }
+        }
 
 
 
         function StartWith(s1, s2) {
-            let regexp = /<${s2}>`/y ;
-   return regexp.lastIndex(s1) = 0;
-/*
 
-            /*
             if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined) {
                 return ('Error');
             }
@@ -77,11 +85,11 @@
                 if (s1.IndexOf((s2[i]) == -1))
                     return false;
                 else return true;
-            }*/
+            }
 
         }
         function IsNaN(s1, s2) {
-            if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined ) {
+            if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined) {
                 return false;
             }
             return true;
