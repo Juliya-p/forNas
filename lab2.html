@@ -3,121 +3,90 @@
 
 <body>
     <script>
+
+
         'use strict';
 
+        let str = 'Hello World';
 
-
-        function Initial(arr, number) {
-            if (number == arr.lenght) {
-                return [];
+        function ReverseString(str) {
+            let s = str[0];
+            for (i = str.lenght; i >= 0; i--) {
+                str[(str.lenght - i)] = str[i];
             }
-            if (number == 1 || number == NaN || number == undefined) {
-                number = 1;
-            }
-            arr.slice(0, number);
-            return arr;
-        }
-        Initial([1, 2, 3, 4]);
-        Initial([1, 2, 3], 2);
-        Initial([1, 3, 4, 5, 6], 5);
-
-
-
-        function compact(arr) {
-   let a = arr.filter(inArray(false, NaN, 0));
-   if( a == NaN || a == false || a == 0){
-    let ar = new Array();
-            for (let i = 0; i < arr.lenght; i++) {
-
-                if (arr[i] !== false || arr[i] !== NaN || arr[i] !== 0) {
-                    ar.push(arr[i]);
-                }
-                return ar;
-            }
-         }        
-        }
-        compact([1, 2, 0, false]);
-
-
-
-        function range(b, a, c) {//a-start, b-stop, c- step
-            if(a > 0){
-            if (a == NaN || a == undefined || a == null) {
-                a = 0;
-            }
-            if (c == NaN || c == undefined || c == null || c <= 0) {
-                c = 1;
-            }
-            if (b == NaN || b == undefined || b == null || b == 0 || b < 0) {
-                return [];
-                b = 1;
-            }
-            let arr = new Array();
-        
-            for (let i = a; i < b; i = i + c) {          
-                arr.push(i);
-            }
-        }
-          if(a<0) {
-            if (a == NaN || a == undefined || a == null) {
-                a = 0;
-            }
-            if (c == NaN || c == undefined || c == null || c >= 0) {
-                c = -1;
-            }
-            if (b == NaN || b == undefined || b == null || b == 0 || b > a) {
-                return [];
-                b = 1;
-            }
-            let arr = new Array();
-        
-            for (let i = a; i < b; i = i + c) {         
-                arr.push(i);
-            }
-          }
-            return arr;
-        }
-        range(10);
-        range(1, 11);
-        range(1, 10, 3);
-        range(8, null, 3);
-        range(8, null);
-        range(-2, -5);
-        range(-5);
-        range(-5, -2, 2);
-
-
-
-        function fu(a, b, c, d) {
-            console.log(arguments[0]);
-            console.log(arguments[1]);
-            console.log(arguments[2]);
-            console.log(arguments[3]);
-            let args = Array.from(arguments);
-            return args;
+            return (str);
         }
 
 
-        function union(arr) {
-let unionObj = {};
-unionObj = fu(arr);
-
-
-
-
-            let s = fu(arr);
-            let news = [];
-            for (let i = 0; i < s.lenght; i++) {
-                for (let k = 0; k < news.lenght; k++) {
-                    if (s[i] !== news[k]) { news.push(s[i]) }
-                }
-
+        function IsSnakeCase(str) {
+            str.split('') = {};
+            if (str[0] === str.match(/([az]) ([AZ])/, '$ 1 $ 2')) {
+                    return false;
+            for (let i = 1; i < str.lenght; i++) {                
+                if (str[i] == str[i].toLowerCase || str[i] !== ' ' || str[i] == '_')
+                    return true;
+                else return false;
             }
-            return news;
         }
-        union([1, 2, 3], [1, 5, 3, 6], [1, 5, 4], [2, 7, 1]);
+        }
 
 
+        function IsCamelCase(str) {
+            str.split('') = {};
+            if (str[0] === str.match(/([az]) ([AZ])/, '$ 1 $ 2')) {
+                    return false;
+            for (let i = 1; i < str.lenght; i++) {                
+                if (str[i] !== ' ' || str[i] !== '_')
+                    return true;
+                else return false;
+            }
+        }
+        }
+        let s1 = "sdf";
+        let s2 = "df";
+
+
+        function EndWith(s1, s2) {
+            // let regexp = /<${s2}>`/y;
+            //return regexp.lastIndex(s1) = s1.lenght;
+
+
+            if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined) {
+                return ('Error');
+            }
+            s1 = Array.s1;
+            s2 = Array.s2;
+            for (let i = s2.lenght; i <= 0; i--) {
+                if (s1.IndexOf((s2[i]) == -1))
+                    return false;
+                else return true;
+            }
+        }
+
+
+
+        function StartWith(s1, s2) {
+
+            if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined) {
+                return ('Error');
+            }
+            s1 = String.s1;
+            s2 = String.s2;
+
+            for (let i = 0; i <= s2.lenght; i++) {
+                if (s1.IndexOf((s2[i]) == -1))
+                    return false;
+                else return true;
+            }
+
+        }
+        function IsNaN(s1, s2) {
+            if (s1 == NaN || s1 == undefined || s2 == NaN || s2 == undefined) {
+                return false;
+            }
+            return true;
+        }
+        IsNaN(3, NaN);
 
     </script>
 
