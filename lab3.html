@@ -19,36 +19,28 @@
 
 
         function IsSnakeCase(str) {
-            let resault1 = str.match(/' '/);
-
             str.split('') = {};
-            let regexp = str.match(/' '/);
-            if (regexp == ' ') {
-                return false;
-            };
-
-            for (i = 0; str[i] <= str.lenght; i++) {
-                if (str[i] == str[i].toLowerCase) {
+            if (str[0] === str.match(/([az]) ([AZ])/, '$ 1 $ 2')) {
                     return false;
-                }
-                else return true;
+            for (let i = 1; i < str.lenght; i++) {                
+                if (str[i] == str[i].toLowerCase || str[i] !== ' ' || str[i] == '_')
+                    return true;
+                else return false;
             }
+        }
         }
 
 
         function IsCamelCase(str) {
-            let resault1 = str.match(/' '/);
-            let resault2 = str.match(/'_'/);
-
             str.split('') = {};
-            let regexp = str.match(/' '/);
-            if (regexp == ' ') {
-                return false;
-            };
-            regexp = str.match(/'_'/);
-            if (str.regexp == '_') {
-                return false;
+            if (str[0] === str.match(/([az]) ([AZ])/, '$ 1 $ 2')) {
+                    return false;
+            for (let i = 1; i < str.lenght; i++) {                
+                if (str[i] !== ' ' || str[i] !== '_')
+                    return true;
+                else return false;
             }
+        }
         }
         let s1 = "sdf";
         let s2 = "df";
