@@ -1,46 +1,68 @@
 <!DOCTYPE html>
 <html>
+<html lang="ru">
 
 <body>
+    <input type="text" name="time" id="time">
+    <button id="button">Старт</button>
+    <div id="timer"></div>
+    <script src="script.js"></script>
+
+
+
     <script>
 
         'use strict';
 
-        let time = 1900;
+        let timerInput = document.getElementById("time");
+        let buttonRun = document.getElementById("button");
+        let timerMinut = document.getElementById("timer");
 
-        class timer {
-            isValid(x) {
-                return (typeof (x) === "int");
+
+        ButtonRun.addEventListener('click', function () {
+            timeMinut = parseInt(timerInput.value) * 60;
+        });
+
+        class Timer {
+
+            start(timeMinut, stop) {
+                timer = setInterval(function () {
+                    seconds = timeMinut % 60;
+                    minutes = timeMinut / 60 % 60;
+                    hour = timeMinut / 60 / 60 % 60;
+
+                    let StrTimer = '${Math.trunc(hour)} : ${Math.trunc(minuts)}: ${seconds}';
+                    timeShow.innerHTML = strTimer;
+
+                    --timeMinut;
+                    if (timeMinut == 0) {
+                        stop(timeMinut);
+                    }
+                }, 1000);
+
             }
 
+            stop(timeMinut, start) {
+                clearInterval(timer);
+                let stoptime = timerMinut;
+                start(stoptime);
 
-            start(t) {
-                isValid(t);
-                t = new t1();
-                Timer(t1);
-            }
-
-            Timer(t) {
-                this.t = t; 
-                console.log('Time started' + this.t);
-                let s = setTimeout(stop(t), time);
-            }
-
-            stop(t) {
-                isValid(t);
-                console.log('Time ends');
-                clearTimeout(s);
+                //+ показать время
             }
         }
-class NewTimer extends timer{
-
-}
 
 
+        class NewTimer extends timer {
 
-
-
-
+            start(time) {
+                clearInterval(time);
+                NewTimer = setInterval(function () {
+                    time--;
+                    if (time == 0) {
+                        stop(time);
+                    }
+                }, 1000);
+            }
 
     </script>
 </body>
