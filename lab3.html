@@ -20,31 +20,17 @@
 
         function IsSnakeCase(str) {
             str.split('') = {};
-            if (str[0] === str.match(/([az]) ([AZ])/, '$ 1 $ 2')) {
-                    return false;
-            for (let i = 1; i < str.lenght; i++) {                
-                if (str[i] == str[i].toLowerCase || str[i] !== ' ' || str[i] == '_')
-                    return true;
-                else return false;
-            }
-        }
-        }
+         return ( str.match(/([az]) ([AZ]) (['_'])/, '$ 1 $ 2') == /([az]) ([AZ]) (['_'])/) 
+        }        
 
 
         function IsCamelCase(str) {
             str.split('') = {};
-            if (str[0] === str.match(/([az]) ([AZ])/, '$ 1 $ 2')) {
-                    return false;
-            for (let i = 1; i < str.lenght; i++) {                
-                if (str[i] !== ' ' || str[i] !== '_')
-                    return true;
-                else return false;
-            }
-        }
-        }
+        return (str.match(/([az]) ([AZ])/, '$ 1 $ 2') ==/([az]) ([AZ])/);
+    
         let s1 = "sdf";
         let s2 = "df";
-
+        }
 
         function EndWith(s1, s2) {
             // let regexp = /<${s2}>`/y;
