@@ -1,39 +1,74 @@
 <!DOCTYPE html>
+
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>Timer</title>
-    </head>
-    <body>
-        <input type="text" name="time" id="time">
-        <button id="button">Start</button>
-        <button id="button">Stop</button>
-        <div id="timer"></div>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+</head>
+
+<body>
+
+    <input type="text" name="time" id="time">
+    <button id="button">Start</button>
+    <button id="button">Stop</button>
+    <div id="timer"></div>
+    <div class="timer">
+        <span class="hours">11</span>
+        <span>:</span>
+        <span class="minuts">12</span>
+        <span>:</span>
+        <span class="seconds">11</span>
+    </div>
     <script>
         'use strict';
-let timerInput = document.getElementById("time"); 
-let buttonRun = document.getElementById("button");
-let timerShow = document.getElementById("timer");
-buttonRun.addEventListener('click', function() {
-    timeMinut = parseInt(timerInput.value) * 60
-})
+let timeMinut;
+text.textContent = 'Привет, ЮЛЯ!';
 
-timer = setInterval(function () {
-    seconds = timeMinut%60 ;
-    minutes = timeMinut/60%60; 
-    hour = timeMinut/60/60%60;
-    
-    if (timeMinut <= 0) {
-        clearInterval(timer);
-        alert("Время закончилось");
-    } else { 
-        let strTimer = `${Math.trunc(hour)}:${Math.trunc(minuts)}:${seconds}`;
-        timerShow.innerHTML = strTimer;
+const stopBtn = document.getElementById('button-stop');
+function countTimer(deadline) {
+    const 
+    startBtn = document.getElementById("button-start"),
+    timerInput = document.getElementById("time"),ы
+    timerShow = document.getElementById("timer"),
+    text = document.getElementById('text'),
+    hoursHtml = document.getElementsByClassName('hours')[0],
+    minutesHtml = document.getElementsByClassName('minutes')[0],
+    secondsHtml = document.getElementsByClassName('seconds')[0];
+    function getTimeRemaining() {
+            const dateStop = new Date(deadline).getTime(),
+                dateNow = new Date().getTime(),
+                timeRemaining = (dateStop - dateNow) / 1000,
+                seconds = Math.floor(timeRemaining % 60),
+                minutes = Math.floor((timeRemaining / 60) % 60),
+                hours = Math.floor(timeRemaining / 60 / 60) % 24;
+            return { timeRemaining, hours, minutes, seconds };
+        }
+        function updateClock() {
+            console.log(1);
+            const timer = getTimeRemaining();
+            const checkNumber = number => (number < 10 ? `0${number}` : `${number}`);
+            if (timer.timeRemaining > 0) {
+                hoursHtml.textContent = checkNumber(timer.hours);
+                minutesHtml.textContent = checkNumber(timer.minutes);
+                secondsHtml.textContent = checkNumber(timer.seconds);
+                setInterval(updateClock, 1000);
+            }   else {
+                hoursHtml.textContent = '00';
+                minutesHtml.textContent = '00';
+                secondsHtml.textContent = '00';
+            }
+
+        }        
+        startBtn.addEventListener('click', () => {
+            updateClock();
+        });           
     }
-    --timeMinut; 
-}, 1000);
+countTimer('22 march 2021');
 
-        </script>
+
+    </script>
 
 </body>
+
 </html>
