@@ -45,7 +45,9 @@ function countTimer(deadline) {
         }
         function updateClock() {
             console.log(1);
+           
             const timer = getTimeRemaining();
+            console.log(timer.timeRemaining);
             const checkNumber = number => (number < 10 ? `0${number}` : `${number}`);
             if (timer.timeRemaining > 0) {
                 hoursHtml.textContent = checkNumber(timer.hours);
@@ -63,7 +65,7 @@ function countTimer(deadline) {
             updateClock();
         });           
     }
-countTimer('22 march 2021');
+countTimer('24 march 2021');
     </script>
 
 </body>
