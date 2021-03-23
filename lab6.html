@@ -10,25 +10,25 @@
 <body>
 
     <input type="text" name="time" id="time">
-    <button id="button">Start</button>
-    <button id="button">Stop</button>
+    <button id="button-start">Start</button>
+    <button id="button-stop">Stop</button>
     <div id="timer"></div>
     <div class="timer">
         <span class="hours">11</span>
         <span>:</span>
-        <span class="minuts">12</span>
+        <span class="minutes">12</span>
         <span>:</span>
         <span class="seconds">11</span>
     </div>
     <script>
-        'use strict';
+       'use strict';
 let timeMinut;
 
 const stopBtn = document.getElementById('button-stop');
 function countTimer(deadline) {
     const 
     startBtn = document.getElementById("button-start"),
-    timerInput = document.getElementById("time"),ы
+    timerInput = document.getElementById("time"),
     timerShow = document.getElementById("timer"),
     text = document.getElementById('text'),
     hoursHtml = document.getElementsByClassName('hours')[0],
@@ -64,8 +64,6 @@ function countTimer(deadline) {
         });           
     }
 countTimer('22 march 2021');
-
-
     </script>
 
 </body>
