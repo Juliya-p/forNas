@@ -43,29 +43,42 @@ function countTimer(deadline) {
                 hours = Math.floor(timeRemaining / 60 / 60) % 24;
             return { timeRemaining, hours, minutes, seconds };
         }
+       
+    
+    
         function updateClock() {
             console.log(1);
-           
+            let timerId =  setInterval(updateClock, 1000);
             const timer = getTimeRemaining();
             console.log(timer.timeRemaining);
+            
             const checkNumber = number => (number < 10 ? `0${number}` : `${number}`);
             if (timer.timeRemaining > 0) {
                 hoursHtml.textContent = checkNumber(timer.hours);
                 minutesHtml.textContent = checkNumber(timer.minutes);
                 secondsHtml.textContent = checkNumber(timer.seconds);
-                setInterval(updateClock, 1000);
+                console.log(timer.hours, ":", timer.minutes, ":", timer.seconds);
+               
             }   else {
                 hoursHtml.textContent = '00';
                 minutesHtml.textContent = '00';
                 secondsHtml.textContent = '00';
+                
             }
-
-        }        
+            
+        }
+      
+         
+        stopBtn.addEventListener('click', () => {
+           timerId= clearInterval(timerId);
+        });       
         startBtn.addEventListener('click', () => {
+         
             updateClock();
-        });           
+        });      
     }
-countTimer('24 march 2021');
+    
+countTimer('2 april 2021');
     </script>
 
 </body>
