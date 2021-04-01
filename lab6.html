@@ -48,7 +48,7 @@ function countTimer(deadline) {
     
         function updateClock() {
             console.log(1);
-            let timerId =  setInterval(updateClock, 1000);
+            let timerId = setInterval(updateClock, 1000);
             const timer = getTimeRemaining();
             console.log(timer.timeRemaining);
             
@@ -70,10 +70,9 @@ function countTimer(deadline) {
       
          
         stopBtn.addEventListener('click', () => {
-           timerId= clearInterval(timerId);
+         clearInterval(timerId);
         });       
-        startBtn.addEventListener('click', () => {
-         
+        startBtn.addEventListener('click', () => {         
             updateClock();
         });      
     }
