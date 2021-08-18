@@ -46,13 +46,9 @@
                 return { timeRemaining, hours, minutes, seconds };
             }
 
-            function updateClock() {
-                
-                tim = setInterval(updateClock, 1000);
-
+            function updateClock(callback) {
                 const timer = getTimeRemaining();
                 console.log(timer.timeRemaining);
-
                 const checkNumber = number => (number < 10 ? `0${number}` : `${number}`);
                 if (timer.timeRemaining > 0) {
                     hoursHtml.textContent = checkNumber(timer.hours);
@@ -66,7 +62,7 @@
                     secondsHtml.textContent = '00';
 
                 }
-
+                tim = setInterval(callback, 1000);
             }
 
             stopBtn.addEventListener('click', () => {
@@ -74,7 +70,7 @@
                 clearInterval(tim);
             });
             startBtn.addEventListener('click', () => {
-                updateClock();
+                updateClock(() => {console.log(111)});
 
             });
         }
